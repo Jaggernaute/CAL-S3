@@ -2,9 +2,9 @@
 \NewExpandableDocumentCommand{\ThesisType}{}{L2 ISTN}
 
 %% Thesis title (exactly as in the formal assignment)
-\NewExpandableDocumentCommand{\ThesisTitle}{}{Calculabilite $3^\text{\`eme}$ semestre}
+\NewExpandableDocumentCommand{\ThesisTitle}{}{Calculabilite\'e $3^\text{\`eme}$ semestre}
 %% Plaintext version for PDF metadata, uncomment if needed (defauls to \ThesisTitle)
-\NewExpandableDocumentCommand{\ThesisTitlePlaintext}{}{Mathematics $3^\text{\`eme}$ semestre}
+\NewExpandableDocumentCommand{\ThesisTitlePlaintext}{}{Calculabilite\'e $3^\text{\`eme}$ semestre}
 %% Thesis title (if custom formatting is needed for the title page, defauls to \ThesisTitle)
 \NewExpandableDocumentCommand{\ThesisTitleFront}{}{
     \ThesisTitle\\
@@ -12,7 +12,7 @@
 }
 
 %% Author of the thesis
-\NewExpandableDocumentCommand{\ThesisAuthor}{}{\textcolor{RoyalBlue}{Alex Videcoq}}
+\NewExpandableDocumentCommand{\ThesisAuthor}{}{\textcolor{red}{Alex Videcoq}}
 %% Plaintext version for PDF metadata, uncomment if needed (defauls to \ThesisAuthor)
 \NewExpandableDocumentCommand{\ThesisAuthorPlaintext}{}{Alex Videcoq}
 
@@ -27,36 +27,34 @@
 %% Name of the department or institute, where the work was officially assigned
 %% (according to the Organizational Structure of MFF UK in English,
 %% or a full name of a department outside MFF)
-\NewDocumentCommand{\Department}{}{\textcolor{RoyalBlue}{ISTIC}}
+\NewDocumentCommand{\Department}{}{\textcolor{red}{ISTIC}}
 
 %% Is it a Department (katedra), or an Institute (ústav)?
 \NewDocumentCommand{\DeptType}{}{UFR}
 
 %% Thesis supervisor: name, surname and titles
-\NewDocumentCommand{\Supervisor}{}{\textcolor{RoyalBlue}{Prof. Gilles Lesventes}}
+\NewDocumentCommand{\Supervisor}{}{\textcolor{red}{Prof. Gilles Lesventes}}
 %% Thesis co-supervisor: name, surname and titles (uncomment if applicable)
-%\NewDocumentCommand{\CoSupervisor}{}{Prof. Matthieu Davy}
+% \NewDocumentCommand{\CoSupervisor}{}{Prof. Matthieu Davy}
 
 %% Supervisor's department/institute (again according to Organizational structure of MFF)
-\NewDocumentCommand{\SupervisorsDepartment}{}{\textcolor{RoyalBlue}{ISTIC}}
+\NewDocumentCommand{\SupervisorsDepartment}{}{\textcolor{red}{ISTIC}}
 
 %% Study programme and specialization
-\NewDocumentCommand{\StudyProgramme}{}{\textcolor{RoyalBlue}{L2 ISTN}}
+\NewDocumentCommand{\StudyProgramme}{}{\textcolor{red}{L2 ISTN}}
 
 %% Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
 \NewDocumentCommand{\Abstract}{}{
-Ce document fournit une vue d'ensemble sur les fondements de la calculabilit\'e et de la complexit\'e des algorithmes. Il explore les notions cl\'es telles que les limites des calculs automatis\'es, la s\'emantique des langages de programmation et l'\'etude des classes de complexit\'e, offrant ainsi une base solide pour la compr\'ehension des enjeux th\'eoriques de l'informatique.
-\
 }
 
 %% Subject (short description for PDF metadata)
 \NewExpandableDocumentCommand{\Subject}{}{%
-
+    Ce document fournit une vue d'ensemble sur les fondements de la calculabilit\'e et de la complexit\'e des algorithmes. Il explore les notions cl\'es telles que les limites des calculs automatis\'es, la s\'emantique des langages de programmation et l'\'etude des classes de complexit\'e, offrant ainsi une base solide pour la compr\'ehension des enjeux th\'eoriques de l'informatique.
 }
 
 %% Keywords (about 3-7)
 \NewExpandableDocumentCommand{\Keywords}{}{%
-    \textcolor{red}{Calculabilite}
+    \textcolor{red}{calculabilite, complexite, semantique, langages formels}
 }
 %% Plaintext version for PDF metadata, uncomment if needed (defauls to \Keywords)
 \NewExpandableDocumentCommand{\KeywordsPlaintext}{}{%
