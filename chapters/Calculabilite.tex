@@ -1,5 +1,8 @@
 \chapter{Introduction \`a la Calculabilit\'e}\label{chap:introduction}
+    La \emph{calculabilit\'e} est un domaine de la logique mathématique et de l'informatique théorique qui vise à identifier les limites de ce qui peut être calculé par un algorithme. Cette discipline ne se préoccupe pas de l'efficacité des algorithmes, qui est l'objet de la théorie de la complexité, mais seulement de l'existence ou de la non-existence d'un algorithme qui résout un problème donné, sur un ordinateur idéalisé tel qu'une machine de Turing, démontrée équivalente en possibilités à tous les ordinateurs existants. La notion la plus centrale de la calculabilité est celle de fonction calculable. Son intérêt est justifié par la \emph{thèse de Church \autocite{church_unsolvable_1936}}, qui affirme que les fonctions calculables avec la définition formelle correspondent exactement aux fonctions qui peuvent être calculées par un humain ou une machine, dans le monde physique. Cependant, la calculabilité ne se limite pas à séparer les fonctions calculables des fonctions non calculables, mais cherche aussi à comparer les fonctions non calculables entre elles, en s'appuyant sur la notion de réduction pour affirmer (informellement) que certaines fonctions sont plus "incalculables" que d'autres. Les niveaux d'incalculabilité sont appelés \emph{degrés de Turing}, et une partie de la calculabilité consiste à étudier leur structure. 
+    
     \section{Notions fondamentales de la calculabilit\'e}\label{sec:notions_fondamentales}
+    \subsection{Programmes}
     \begin{definition}
         Programme :\\
         Un programme est un texte \emph{fini}.\\
@@ -9,6 +12,7 @@
             Ici aucune hypoth\`ese n'est faite sur le jeu de charact\`eres, le lexique ou le langage de programmation.
         \end{Note}
     \end{definition}
+    \subsection{Fonctions}
     \begin{definition}
         Fonction :\\
         Soient \(\mathbb{D}\) et \(\mathbb{D'}\) deux ensembles de valeurs, une \emph{fonctions} \(f:\mathbb{D}\rightarrow\mathbb{D'}\) est un ensemble de paires \(\langle v,v'\rangle\) telles que \(v\in\mathbb{D}\) et \(v'\in\mathbb{D'}\), et vérifie :
@@ -16,9 +20,53 @@
             \forall v\in\mathbb{D}, \forall v',v''\in\mathbb{D'}, \left[\langle v,v'\rangle\in f\wedge\langle v,v''\rangle\in f \Rightarrow v'=v''\right]
         \end{equation}
         On appelle \(v\) une \emph{entrée} (en pratique, ce serait un \emph{paramètre}), et \(v'\) une \emph{sortie} ou \emph{l'image de \(v\) par \(f\)}.\\
-        \(\mathbb{D}\) est appelé son \emph{domaine} et \(\mathbb{D'}\) son \emph{co-domaine}.
+        \(\mathbb{D}\) est appelé son \emph{domaine} et \(\mathbb{D'}\) son \emph{co-domaine}.\par
+        L'ensemble des valeurs \(v\) telles que \(\langle v,v'\rangle\) appartient \`a une fonction \(f\) est le \emph{domaine de d\'efinition} de \(f\colon\{v\in\mathbb{D}|\exists v'.\langle v,v'\rangle\in f\}\).\\
+        Il peut \^etre infini.\\
+        Si le domaine de d\'efinition de \(f\) est \'egal au domaine \(\mathbb{D}\) on dit que la fonction \(f\) est \emph{totale}. Elle est d\'efinie partout, \(\forall v\in\mathbb{D}.\exists v'.\langle v,v'\rangle\in f\).\\
+        Sinon, on dit qu'elle est \emph{partielle}, il existe des points ou elle n'est pas d\'efinie. Si \(x\) est un de ces point, faire r\'ef\'erence \`a \(f(x)\) n'\`a aucun sens. 
     \end{definition}
-  
+
+    Il existe deux points de vue pour décrire une fonction :
+    \begin{itemize}
+        \item \textbf{Point de vue extensionnel : } On considère qu'une fonction est entièrement définie par son \emph{graphe} (l'ensemble des couples \((x,y)\) qui la constitue) :
+        \begin{example}
+            \begin{equation}
+                d = \{(0,0),(1,2),(2,4),(3,6),\dots\}
+            \end{equation}
+        \end{example}
+        Le point de vue \emph{extensionnel} sur les fonctions les résume à leur comportement \emph{d'entrée-sortie}.
+
+        \item \textbf{Point de vue intensionnel : } Ici, on considère une fonction comme un procédé de calcul défini par un enchaînement d'opérations.
+        \begin{example}
+            \begin{flalign}
+            f&:x\mapsto x+x\\
+            g&:x\mapsto2x
+            \end{flalign}
+            Ici, les définitions des fonctions \(f\) et \(g\) dénotent des fonctions différentes dont on pourrait montrer qu'elles sont extensionnellement équivalentes parce qu'elles produisent partout le même effet.\\
+            Ce principe est à rapprocher de la définition d'un ensemble en compréhension d'un ensemble :
+            \begin{equation}
+                d=\{(x,y)|y=x=x\}
+            \end{equation}
+        \end{example}
+    \end{itemize}
+
+    \subsection{Problèmes de decision}
+    Certaines \emph{fonctions} sont ce que l'on appelle des \emph{problèmes de décision} (voir \Cref{def:pb-decision}). Elles définissent si une propriété est \emph{vraie} en rendant les valeurs \emph{vrai} ou \emph{faux}.\\
+    L'ensemble \(\{vrai,faux\}\) est noté \(\mathbb{B}\).
+    \begin{Todo}
+        Complément.\\
+        Mettre en évidence le lien entre les problèmes de décision et l'algèbre de Boole.
+    \end{Todo}
+    
+    \begin{definition}\label{def:pb-decision}
+        Problème de décision :\\
+        Un problème de décision est une fonction \(f\) totale de \(\mathbb{D}\) dans \(\mathbb{B}\). On écrit \(f\colon\mathbb{D}\rightarrow\mathbb{B}\).
+    \end{definition}
+
+    Une \emph{instance} d'un problème de décision, une donnée de \(\mathbb{D}\) pour laquelle on veut résoudre le problème. On dit qu'une instance est \emph{positive} si son image est \(\mathtt{vrai}\) et \emph{négative} si son image est \(\mathtt{fausse}\). L'ensemble des problèmes de décision est \emph{beaucoup plus gros} que celui des programmes.
+
+    \subsection{S\'emantique}
   \section{Th\'eor\`emes de Cantor}\label{sec:theoremes_cantor}
   
   
