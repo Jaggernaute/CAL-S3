@@ -1,0 +1,62 @@
+%% Thesis type: bachelor, master, doctoral
+\NewExpandableDocumentCommand{\ThesisType}{}{L2 ISTN}
+
+%% Thesis title (exactly as in the formal assignment)
+\NewExpandableDocumentCommand{\ThesisTitle}{}{Calculabilite $3^\text{\`eme}$ semestre}
+%% Plaintext version for PDF metadata, uncomment if needed (defauls to \ThesisTitle)
+\NewExpandableDocumentCommand{\ThesisTitlePlaintext}{}{Mathematics $3^\text{\`eme}$ semestre}
+%% Thesis title (if custom formatting is needed for the title page, defauls to \ThesisTitle)
+\NewExpandableDocumentCommand{\ThesisTitleFront}{}{
+    \ThesisTitle\\
+    {\Huge\color{gray}vPre 0.0.1}
+}
+
+%% Author of the thesis
+\NewExpandableDocumentCommand{\ThesisAuthor}{}{\textcolor{RoyalBlue}{Alex Videcoq}}
+%% Plaintext version for PDF metadata, uncomment if needed (defauls to \ThesisAuthor)
+\NewExpandableDocumentCommand{\ThesisAuthorPlaintext}{}{Alex Videcoq}
+
+%% Year when the thesis is submitted
+\NewDocumentCommand{\YearSubmitted}{}{2025}
+%% Year of the last revision, uncomment if it is different from \YearSubmitted
+% \NewDocumentCommand{\YearRevision}{}{2025}
+
+%% University
+\NewDocumentCommand{\University}{}{Univesite de Rennes}
+
+%% Name of the department or institute, where the work was officially assigned
+%% (according to the Organizational Structure of MFF UK in English,
+%% or a full name of a department outside MFF)
+\NewDocumentCommand{\Department}{}{\textcolor{RoyalBlue}{ISTIC}}
+
+%% Is it a Department (katedra), or an Institute (ústav)?
+\NewDocumentCommand{\DeptType}{}{UFR}
+
+%% Thesis supervisor: name, surname and titles
+\NewDocumentCommand{\Supervisor}{}{\textcolor{RoyalBlue}{Prof. Gilles Lesventes}}
+%% Thesis co-supervisor: name, surname and titles (uncomment if applicable)
+%\NewDocumentCommand{\CoSupervisor}{}{Prof. Matthieu Davy}
+
+%% Supervisor's department/institute (again according to Organizational structure of MFF)
+\NewDocumentCommand{\SupervisorsDepartment}{}{\textcolor{RoyalBlue}{ISTIC}}
+
+%% Study programme and specialization
+\NewDocumentCommand{\StudyProgramme}{}{\textcolor{RoyalBlue}{L2 ISTN}}
+
+%% Abstract (recommended length around 80-200 words; this is not a copy of your thesis assignment!)
+\NewDocumentCommand{\Abstract}{}{
+}
+
+%% Subject (short description for PDF metadata)
+\NewExpandableDocumentCommand{\Subject}{}{%
+
+}
+
+%% Keywords (about 3-7)
+\NewExpandableDocumentCommand{\Keywords}{}{%
+    \textcolor{red}{Calculabilite}
+}
+%% Plaintext version for PDF metadata, uncomment if needed (defauls to \Keywords)
+\NewExpandableDocumentCommand{\KeywordsPlaintext}{}{%
+    Manual, Demo, Draft, WIP
+}
