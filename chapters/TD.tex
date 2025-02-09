@@ -1,4 +1,46 @@
 \chapter{Travaux dirig\'es et travaux pratiques}\label{chap:td_tp}
-  \section{\'Etudes de cas pratiques}\label{sec:etudes_cas}
-  \section{Exercices sur la calculabilit\'e et la complexit\'e}\label{sec:exercices_calculabilite}
-  \section{Projets de mise en \oe uvre}\label{sec:projets_mise_en_oeuvre}
+
+    \section{Travaux dirig\'es}\label{sec:exos}
+    \subsection{TD 1 - Nombres remarquables et ensembles de Cantor}\label{td_1}
+    \hspace*{-2.65cm}\textbf{Exercice 1 - Dénombrabilité de \(\mathbb{Z}\) et \(\mathbb{Q}\)}\\
+    Nous avons vu en cours que l'ensemble des rationnels positifs, \(\mathbb{Q^+}\) était en bijection avec l'ensemble des entiers naturels \(\mathbb{N}\). On dit alors que l'ensemble des nombres rationnels positifs est dénombrable. La cardinalité de l'ensemble des nombres naturels \(\mathbb{N}\) se note \(\aleph_0\) et on écrit \(\|\mathbb{Q^+}\|=\|\mathbb{N}\|=\aleph_0\).\par
+
+    
+    \hspace*{-1.5em}\textbf{1.} Montrer qu'il existe toujours une injection d'une union de deux ensembles dénombrables vers \(\mathbb{N}\). En déduire qu'une union de deux ensembles dénombrables est dénombrable. Citer le théorème utilise.\par
+    Soient \( A \) et \( B \) deux ensembles d\'enombrables.\\
+    Par d\'efinition, il existe des bijections :  
+    \begin{equation}
+        f: A \to \mathbb{N} \quad \text{et} \quad g: B \to \mathbb{N}
+    \end{equation}
+    On d\'efinit une fonction injective de \( A \cup B \) vers \( \mathbb{N} \) en intercalant des \'el\'ements de \( A \) et \( B \) :
+    \begin{equation}
+        h(x) =
+        \begin{cases}
+            2f(x), & \text{si } x \in A \\
+            2g(x) + 1, & \text{si } x \in B
+        \end{cases}
+    \end{equation}
+    Cette fonction est injective, car les images de \( A \) sont des nombres pairs et celles de \( B \) sont des nombres impairs. Ainsi, chaque \'el\'ement de \( A \cup B \) a une image distincte dans \( \mathbb{N} \).
+    Réciproquement \(f^{-1}\) définie une injection de \(A\cup B\) dans \(\mathbb{N}\).
+
+    \begin{theorem}
+        (Cantor-Schröder-Bernstein, 1895).\\
+        Soit E et F deux ensembles. S’il existe une injection de E dans F et une injection de F dans E, E et F sont en bijection.
+    \end{theorem}
+
+    \hspace*{-1.5em}\textbf{2.} En déduire que l'ensemble des entiers relatifs \(\mathbb{Z}\) et l'ensemble des rationnels \(\mathbb{Q}\) sont dénombrables :\\
+    \(\|\mathbb{Z}\|=\|\mathbb{Q}\|=\|\mathbb{N}\|=\aleph_0\)
+
+    \begin{definition}
+        \(\mathbb{Z}\).\\
+        \(\mathbb{Z} = \mathbb{N}\cup\{-n\colon n\in\mathbb{N}\}\)
+    \end{definition}
+
+    Il existe une bijection entre \(\{-n\colon n\in\mathbb{N}\}\) et \(\mathbb{N}\) :
+    \begin{flalign}
+        f&:\{-n\colon n\in\mathbb{N}\}\rightarrow\mathbb{N}\\
+        f(&x) = -x
+    \end{flalign}
+    L'ensemble \(\{-n\colon n\in\mathbb{N}\}\) est donc denombrable. Donc 
+    
+    \section{\'Exercices pratiques}\label{sec:etudes_cas}
