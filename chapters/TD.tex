@@ -7,7 +7,7 @@
 
     
     \hspace*{-1.5em}\textbf{1.} Montrer qu'il existe toujours une injection d'une union de deux ensembles dénombrables vers \(\mathbb{N}\). En déduire qu'une union de deux ensembles dénombrables est dénombrable. Citer le théorème utilisé.\\
-    \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+    \headrule
     Soient \( A \) et \( B \) deux ensembles dénombrables.\\
     Par d\'efinition, il existe des bijections :  
     \begin{equation}
@@ -24,14 +24,14 @@
     Cette fonction est injective, car les images de \( A \) sont des nombres pairs et celles de \( B \) sont des nombres impairs. Ainsi, chaque \'el\'ement de \( A \cup B \) a une image distincte dans \( \mathbb{N} \).
     Réciproquement \(f^{-1}\) définit une injection de \(A\cup B\) dans \(\mathbb{N}\).
 
-    \begin{theorem}\label{cantot-schroder-bernstein}
+    \begin{theorem}\label{cantor-schroder-bernstein}
         (Cantor-Schröder-Bernstein, 1895).\\
         Soit E et F deux ensembles. S’il existe une injection de E dans F et une injection de F dans E, E et F sont en bijection.
     \end{theorem}
 
     \hspace*{-1.5em}\textbf{2.} En déduire que l'ensemble des entiers relatifs \(\mathbb{Z}\) et l'ensemble des rationnels \(\mathbb{Q}\) sont dénombrables :\\
-    \(\|\mathbb{Z}\|=\|\mathbb{Q}\|=\|\mathbb{N}\|=\aleph_0\)\\
-    \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+    \(\|\mathbb{Z}\|=\|\mathbb{Q}\|=\|\mathbb{N}\|=\aleph_0\)\par
+    \headrule
 
     \begin{definition}
         \(\mathbb{Z}\).\\
@@ -39,11 +39,13 @@
     \end{definition}
 
     Il existe une bijection entre \(\{-n\colon n\in\mathbb{N}\}\) et \(\mathbb{N}\) :
-    \begin{flalign}
+    \begin{equation}
+    \begin{split}
         f&:\{-n\colon n\in\mathbb{N}\}\rightarrow\mathbb{N}\\
         f&(x) = -x
-    \end{flalign}
-    L'ensemble \(\{-n\colon n\in\mathbb{N}\}\) est donc dénombrable. Donc, par application directe du \Cref{cantot-schroder-bernstein}, \(\mathbb{N}\cup\{-n\colon n\in\mathbb{N}\}\) est dénombrable, cela revient à dire que \(\mathbb{Z}\) est dénombrable.\par
+    \end{split}
+    \end{equation}
+    L'ensemble \(\{-n\colon n\in\mathbb{N}\}\) est donc dénombrable. Donc, par application directe du \Cref{cantor-schroder-bernstein}, \(\mathbb{N}\cup\{-n\colon n\in\mathbb{N}\}\) est dénombrable, cela revient à dire que \(\mathbb{Z}\) est dénombrable.\par
 
     De même, \(\Q=\Q^+\cup\{-q\colon q\in\Q^+\}\). On suppose \(\Q^+\) dénombrable (vu en cours). Il existe une bijection entre \(\Q^+\) et \(\mathbb{N}\) :
     \begin{flalign}
@@ -56,7 +58,7 @@
         g&(x)=f(-x)
     \end{flalign}
     est une bijection.\\
-    L'ensemble \(\{-q\colon q\in\N\}\) est donc dénombrable. Donc, par application directe du \Cref{cantot-schroder-bernstein}, \(\Q^+\cup\{-q\colon q\in\Q\}\) est dénombrable, cela revient à dire que \(\Q\) est dénombrable.\par
+    L'ensemble \(\{-q\colon q\in\N\}\) est donc dénombrable. Donc, par application directe du \Cref{cantor-schroder-bernstein}, \(\Q^+\cup\{-q\colon q\in\Q\}\) est dénombrable, cela revient à dire que \(\Q\) est dénombrable.\par
 
     \hspace*{-2.65cm}\textbf{Exercice 2 - Indénombrabilité de \(\R\)}\\
     \hspace*{-1.5em}\textbf{1.} En raisonnant par l'absurde, montrer que l'ensemble des nombres réels \(\left]0.1\right[\) n'est pas dénombrable. Penser au schéma vu en cours et à la décomposition de tout réel sous forme décimale, \(a=0,a_1a_2a_3\dots\) :
@@ -70,28 +72,117 @@
         \vdots& & & \ddots & & \ddots & & \\
     \end{array}
     \]
-    \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
-
+    \headrule
     \emph{Considérons} un réel \(b=0,b_1b_2\dots b_j\dots\) tel que pour tout \(j\in\N \text{ par } b_j\neq a_{jj}\). Alors, par définition, \(b\neq a_{j}\) pour tout \(j\in\N\). C'est impossible, car les \(a_j\) sont censés énumérer tous les nombres réels. Donc l'ensemble \(]0;1[\) est indénombrable.
 
-    \hspace*{-1.5em}\textbf{2.} Montrer que les intervalles \(]0;1[\text{ et }]-\frac{\pi}{2};\frac{\pi}{2}[\) ont même cardinal : \(\|]0;1[\|=\|]-\frac{\pi}{2};\frac{\pi}{2}[\|\).
-    \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+    \hspace*{-1.5em}\textbf{2.} Montrer que les intervalles \(]0;1[\text{ et }]-\frac{\pi}{2};\frac{\pi}{2}[\) ont même cardinal : \(\|]0;1[\|=\|]-\frac{\pi}{2};\frac{\pi}{2}[\|\).\par
+    \headrule
+    
     \emph{Considérons} les fonctions :
-    \begin{flalign}
+    \begin{equation}
+    \begin{split}
         f&\colon\left]-\frac{\pi}{2};\frac{\pi}{2}\right[\rightarrow\left]0;\pi\right[\\
         f&(x)=x+\frac{\pi}{2}
-    \end{flalign}
-    \begin{flalign}
+    \end{split}
+    \end{equation}
+    \begin{equation}
+    \begin{split}
         g&\colon\left]0;\pi\right[\rightarrow\left]0;1\right[\\
         g&(x)=\frac{x}{\pi}
-    \end{flalign}
+    \end{split}
+    \end{equation}
     Les fonctions \(f\text{ et }g\) sont bijectives (pour le prouver, on peut regarder leurs fonctions inverses), donc \(f\circ g\) est bijective entre \(]0;1[\text{ et }]-\frac{\pi}{2};\frac{\pi}{2}[\). Ainsi \(]0;1[\text{ et }]-\frac{\pi}{2};\frac{\pi}{2}[\) ont même cardinal.
 
-    \hspace*{-1.5em}\textbf{3.} En utilisant les fonctions bijectives bien connues de \(\left]-\frac{\pi}{2};\frac{\pi}{2}\right[\) dans \(\R\), montrer que \(\R\) est indénombrable.\\
-    \noindent\makebox[\linewidth]{\rule{\linewidth}{0.4pt}}
+    \hspace*{-1.5em}\textbf{3.} En utilisant les fonctions bijectives bien connues de \(\left]-\frac{\pi}{2};\frac{\pi}{2}\right[\) dans \(\R\), montrer que \(\R\) est indénombrable.\par
+    \headrule
     Il suffit de prendre la fonction \(\tan\). On a démontré dans la fonction précédente que l'on avait montré une bijection entre \(]0;1[\) et \(\R\) et ces ensembles ont même cardinalité. Comme on a montré à la question \(1\) que \(]0;1[\) est indénombrable, \(\R\) l'est aussi.
 
     \hspace*{-2.65cm}\textbf{Exercice 3 - Cardinalité de \(\R\)}\\
-    
+    On admet que tout nombre réel \(a\in\R\) est tel que \(a=sup\left\{q\in\Q\colon q<a\right\}\) (\(supE\) est la borne supérieure de l'ensemble non vide \(E\).\par
+
+    \hspace*{-1.5em}\textbf{1.} Montrer qu'il existe une injection de \(\R\) dans \(\mathcal{P}(\N)\) (ce qui s'écrit avec les notations vues en cours \(\|\R\|\leq\|\mathcal{P}(\N)\|\))\par
+    \headrule
+    Considérons la fonction :
+    \begin{equation}
+    \begin{split}
+        f&\colon\R\rightarrow\mathcal{P}(\Q)\\
+        f&(x)=\left\{q\in\Q\colon q<x\right\}
+    \end{split}
+    \end{equation}
+    Cette fonction est une injection si :
+    \begin{equation}
+        f(x)=f(x')
+    \end{equation}
+    Alors : 
+    \begin{equation}
+        \left\{q\in\Q\colon q<x\right\}=\left\{q\in\Q\colon q<x'\right\}
+    \end{equation}
+    Donc :
+    \begin{equation}
+        sup\left\{q\in\Q\colon q<x\right\}=sup\left\{q\in\Q\colon q<x'\right\}
+    \end{equation}
+    c'est-à-dire \(x=x'\) d'après la propriété admise de \(\R\). On a ainsi montré qu'il existe une injection \(f\) de \(\R\) dans \(\mathcal{P}(\Q)\). On a montré dans l'\textbf{Exercice 1} que \(\Q\) était dénombrable. Il existe une bijection \(g_0\) de \(\Q\) vers \(\N\). Donc, il existe une bijection :
+    \begin{equation}
+    \begin{split}
+        g&\colon\mathcal{P}(\Q)\rightarrow\mathcal{P}(\N)\\
+        g&(X)=\left\{g_0(x)\colon x\in X\right\}
+    \end{split}
+    \end{equation}
+    Ainsi, la fonction \(f\circ g\) est une injection de \(\R\) sur \(\mathcal{P}(\N)\).\par
+
+    \hspace*{-1.5em}\textbf{2.} Montrer qu'il existe une bijection de \(\mathcal{P}(\N)\) dans l'ensemble des suites numériques de 0 et 2.\par
+    \headrule
+    Considérons la fonction :
+    \begin{equation}
+    \begin{split}
+        f&\colon\mathcal{P}(\N)\rightarrow\{0,2\}^\N\\
+        f&(x) = (u_n)_{n\in\N}
+    \end{split}
+    \end{equation}
+    \begin{equation}
+        \text{avec }u_n=\begin{cases}
+            2,&\text{ si }n\in x\\
+            0,&\text{ si }n\notin x\\
+        \end{cases}
+    \end{equation}
+
+    La fonction \(f\) est bien une bijection (sa fonction inverse est triviale).
+
+    \hspace*{-1.5em}\textbf{3.} L'ensemble de \emph{Cantor} \(\mathsf{C}\) est défini comme suit :
+    \begin{equation}
+        \mathsf{C}=\left\{\sum_{n=0}^\infty\frac{u_n}{3^{n+1}}\colon u_n\in\{0,2\}\right\}
+    \end{equation}
+
+    Il s'obtient en soustrayant a l'intervalle ferme \([0;1]\) les intervalles ouverts \(]\frac{1}{3};\frac{2}{3}[\), \(]\frac{1}{9};\frac{2}{2}[\), \(]\frac{7}{9};\frac{8}{9}[,\)\textit{etc}.
+
+    \begin{figure}[H]
+        \centering
+        \resizebox {.5\textwidth} {!} {
+        \begin{tikzpicture}
+        \foreach \order in {0,...,4}
+            \draw[yshift=-\order*10pt]  l-system[l-system={cantor set, axiom=F, order=\order, step=100pt/(3^\order)}];
+        \end{tikzpicture}
+        }
+        \caption{Quatre premières itérations de la construction de l'ensemble de Cantor \(\mathsf{C}\)}
+        \label{fig:Cantor-set}
+    \end{figure}
+    Montrer qu'il existe une bijection de l'ensemble des suites numériques de 0 et 2 dans\(\mathsf{C}\).\par
+    \headrule
+    \begin{equation}
+        \mathsf{C}\triangleq\left\{\sum_{n=0}^\infty\frac{u_n}{3^{n+1}},(u_n)\in\{0,2\}^\N\right\}
+    \end{equation}
+
+    \hspace*{-1.5em}\textbf{4.} Déduire des deux questions précédentes qu'il existe une bijection entre \(\mathsf{C}\) et \(\mathcal{P}(\N)\) (ce qui s'écrit avec les notations du cours \(\|\mathsf{C}\|=\|\mathcal{P}(\N)\|\)) et qu'il existe une injection de \(\mathcal{P}(\N)\) dans \(\R\)\par
+    \headrule
+    La fonction \(g\circ f\) est une bijection entre \(\mathcal{P}(\N)\) et \(\mathsf{C}\). Par ailleurs, \(\mathsf{C}\subseteq\R\). Par conséquent, \(g\circ f\) est aussi une injection de \(\mathcal{P}(\N)\) dans \(\R\).\par
+
+    \hspace*{-1.5em}\textbf{5.} En déduire que \(\|\R\|=\|\mathcal{P}(\N)\|\). Citer le théorème utilisé.\par
+    \headrule
+    On a montré à la Question 1 qu'il existait une injection de \(\R\) dans \(\mathcal{P}(\N)\) et montre aux Questions 2, 3 et 4 qu'il existait une injection de \(\mathcal{P}(\N)\) dans \(\R\). Par conséquent, d'après le \Cref{cantor-schroder-bernstein}, il existe bien une bijection de \(\R\) dans \(\mathcal{P}(\N)\), c'est-a-dire \(\|\R\|=\|\mathcal{P}(\N)\|\).\par
+
+    Cantor conjectura que tout ensemble de réels est soit au plus dénombrable, soit à la cardinalité de l'ensemble des réels (\emph{i.e.} du continu). Exprime dans la théorie des ensembles de Zermelo et Fraenkel, cette conjecture s'appelle l'\emph{Hypothèse du Continu} et s'écrit\(\aleph_1=2^{\aleph_0}\) o\`u \(\aleph_1\) est le cardinal successeur de \(\aleph_0\) puisque \(\|\R\|=\|\mathcal{P}(\N)\|=2^{\aleph_0}\)\par
+
+    \hspace*{-2.65cm}\textbf{Exercice 4 - Cardinalité de \(\C\)}\\
+
     
     \section{\'Exercices pratiques}\label{sec:etudes_cas}

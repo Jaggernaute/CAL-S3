@@ -1,6 +1,13 @@
 %%% Preamble
 
 \usepackage{tikz}
+\usetikzlibrary{decorations.fractals}
+\usetikzlibrary{lindenmayersystems}
+\pgfdeclarelindenmayersystem{cantor set}{
+  \rule{F -> FfF}
+  \rule{f -> fff}
+}
+
 \usepackage{pgfplots}
 
 
