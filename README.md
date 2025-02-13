@@ -1,5 +1,8 @@
 # Calculabilité (L2 ISTN)
 
+le PDF est disponible ici :
+https://jaggernaute.github.io/CAL-S3/thesis.pdf
+
 ## Description
 Ce document regroupe des notes personnelles sur le cours de calculabilité enseigné en Licence 2 à l'ISTIC de Rennes. Il couvre plusieurs aspects de la calculabilité et de la complexité algorithmique, incluant des travaux dirigés et pratiques.
 
