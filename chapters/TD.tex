@@ -98,6 +98,9 @@
     Il suffit de prendre la fonction \(\tan\). On a démontré dans la fonction précédente que l'on avait montré une bijection entre \(]0;1[\) et \(\R\) et ces ensembles ont même cardinalité. Comme on a montré à la question \(1\) que \(]0;1[\) est indénombrable, \(\R\) l'est aussi.
 
     \hspace*{-2.65cm}\textbf{Exercice 3 - Cardinalité de \(\R\)}\\
+    \begin{Note}
+        Le sujet que j'ai récupéré ne corresponds pas au sujet présent sur \emph{Moodle} après la rédaction de ce TD. Certaines questions ont donc légèrement changé pour les exercices 3 et 4.
+    \end{Note}
     On admet que tout nombre réel \(a\in\R\) est tel que \(a=sup\left\{q\in\Q\colon q<a\right\}\) (\(supE\) est la borne supérieure de l'ensemble non vide \(E\).\par
 
     \hspace*{-1.5em}\textbf{1.} Montrer qu'il existe une injection de \(\R\) dans \(\mathcal{P}(\N)\) (ce qui s'écrit avec les notations vues en cours \(\|\R\|\leq\|\mathcal{P}(\N)\|\))\par
@@ -169,7 +172,7 @@
     Montrer qu'il existe une bijection de l'ensemble des suites numériques de 0 et 2 dans\(\mathsf{C}\).\par
     \headrule
     \begin{equation}
-        \mathsf{C}\triangleq\left\{\sum_{n=0}^\infty\frac{u_n}{3^{n+1}},(u_n)\in\{0,2\}^\N\right\}
+        \mathsf{C}:=\left\{\sum_{n=0}^\infty\frac{u_n}{3^{n+1}},(u_n)\in\{0,2\}^\N\right\}
     \end{equation}
 
     \hspace*{-1.5em}\textbf{4.} Déduire des deux questions précédentes qu'il existe une bijection entre \(\mathsf{C}\) et \(\mathcal{P}(\N)\) (ce qui s'écrit avec les notations du cours \(\|\mathsf{C}\|=\|\mathcal{P}(\N)\|\)) et qu'il existe une injection de \(\mathcal{P}(\N)\) dans \(\R\)\par
@@ -183,6 +186,54 @@
     Cantor conjectura que tout ensemble de réels est soit au plus dénombrable, soit à la cardinalité de l'ensemble des réels (\emph{i.e.} du continu). Exprime dans la théorie des ensembles de Zermelo et Fraenkel, cette conjecture s'appelle l'\emph{Hypothèse du Continu} et s'écrit\(\aleph_1=2^{\aleph_0}\) o\`u \(\aleph_1\) est le cardinal successeur de \(\aleph_0\) puisque \(\|\R\|=\|\mathcal{P}(\N)\|=2^{\aleph_0}\)\par
 
     \hspace*{-2.65cm}\textbf{Exercice 4 - Cardinalité de \(\C\)}\\
+    \hspace*{-1.5em}\textbf{1.} Montrer qu'il existe une injection de \(]0;1[^2\) dans \(]0;1[\). on utilisera pour cela la représentation décimale des nombres réels (en choisissant la représentation la plus grande lexicographiquement d'un nombre réel quand elle existe, comme pour 0,5000 a la place de 0,999...). Il faudra définir un nombre réel \(c\) à partir de deux nombres réels \(a=0,a_1a_2a_3\dots\) et \(b=a=0,a_1a_2a_3\dots\).\par
+    \headrule
+    Considérons la fonction :
+    \begin{equation}
+    \begin{split}
+        f&\colon]0;1[^2\rightarrow]0;1[\\
+        \text{si :}&\\
+        &a=0,a_1a_2a_3\dots \text{ et } b=0,b_1b_2b_3\dots\\
+        \text{alors :}&\\
+        f&(a,b) := 
+        \begin{cases} 
+        a_{\frac{n+1}{2}}, & \text{si } n \text{ est impair} \\
+        b_{\frac{n}{2}}, & \text{si } n \text{ est pair}
+        \end{cases}
+        = 0,a_1b_1a_2b_2\dots
+    \end{split}
+    \end{equation}
+    La fonction \(f\) est une injection si :
+    \begin{equation}
+        0,a_1b_1a_2b_2\dots = 0,a_1'b_1'a_2'b_2'\dots
+    \end{equation}
+    alors :
+    \begin{equation}
+        0,a_1a_2a_3\dots=0,a_1'a_2'a_3'\dots\textbf{ et }0,b_1b_2b_3\dots=0,b_1'b_2'b_3'\dots
+    \end{equation}
 
+    \hspace*{-1.5em}\textbf{2.} En déduire que \(\|]0;1[^2\|=\|]0;1[\|\). Citer le théorème utilise.\par
+    \headrule
+    On vient de définir \(f\) une injection de \(]0;1[^2\text{ dans }]0;1[\). Réciproquement, on peut définir une injection :
+    \begin{equation}
+    \begin{split}
+        g&\colon]0;1[\rightarrow]0;1[^2\\
+        g&(x)=(x,x)
+    \end{split}
+    \end{equation}
+    Donc d'après le \Cref{cantor-schroder-bernstein}, il existe une bijection entre \(]0;1[\text{ et }]0;1[^2\).
+
+    \hspace*{-1.5em}\textbf{3.} En se servant des résultats de l'\textbf{Exercice 2}, montrer que \(\|\R\|^2=\|\R\|\). En déduire que les nombres complexes et les nombres réels ont la même cardinalité : \(\|\C\|=\|\R\|\).\par
+    \headrule
+    D'après l'\textbf{Exercice 2}, il existe une bijection \(f\) de \(\R\) dans \(]0;1[\). D'après la question précédente, il existe une bijection \(g\) de \(]0;1[^2\text{ dans }]0;1[\). Par conséquent, la fonction :
+    \begin{equation}
+    \begin{split}
+        h&\colon\R^2\rightarrow\R\\
+        h&=f^{-1}\circ g(f(x),f(y))
+    \end{split}
+    \end{equation}
+    est une bijection. Donc \(\|\R\|^2=\|\R\|\).\par
+    \vspace{\baselineskip}
+    La fonction de \(\C\) dans \(\R^2\) qui associe à tout nombre complexe la paire de nombre réels constitue de sa partie réelle et imaginaire est une bijection. Donc \(\|\C\|=\|\R^2\|\). Donc si \(\|\R\|^2=\|\R\|\) donc Donc \(\|\C\|=\|\R\|\).
     
     \section{\'Exercices pratiques}\label{sec:etudes_cas}
