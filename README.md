@@ -23,7 +23,7 @@ Ce document regroupe des notes personnelles sur le cours de calculabilité ensei
 ## Avancement des Travaux Dirigés (TD)
 | TD | Statut |
 |----|--------|
-| TD 1 - Nombres remarquables et ensembles de Cantor | 🟡 En cours |
+| TD 1 - Nombres remarquables et ensembles de Cantor | 🟢 Complété |
 | TD 2 | 🔴 À faire |
 | TD 3 | 🔴 À faire |
 | TD 4 | 🔴 À faire |
