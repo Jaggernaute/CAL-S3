@@ -43,10 +43,10 @@
             f&:x\mapsto x+x\\
             g&:x\mapsto2x
             \end{flalign}
-            Ici, les définitions des fonctions \(f\) et \(g\) dénotent des fonctions différentes dont on pourrait montrer qu'elles sont extensionnellement équivalentes parce qu'elles produisent partout le même effet.\\
+            Ici, les définitions des fonctions \(f\) et \(g\) dénotent différentes fonctions dont on pourrait montrer qu'elles sont extensionnellement équivalentes parce qu'elles produisent partout le même effet.\\
             Ce principe est à rapprocher de la définition d'un ensemble en compréhension d'un ensemble :
             \begin{equation}
-                d=\{(x,y)|y=x=x\}
+                d=\{(x,y)|y=x+x\}
             \end{equation}
         \end{example}
     \end{itemize}
@@ -67,6 +67,63 @@
     Une \emph{instance} d'un problème de décision, une donnée de \(\mathbb{D}\) pour laquelle on veut résoudre le problème. On dit qu'une instance est \emph{positive} si son image est \(\mathtt{vrai}\) et \emph{négative} si son image est \(\mathtt{fausse}\). L'ensemble des problèmes de décision est \emph{beaucoup plus gros} que celui des programmes.
 
     \subsection{S\'emantique}
+        \begin{definition}\label{def:sementique}
+        Sémantique d'un programme :\\
+        La sémantique des programmes est modélisé par une fonction \(\mathcal{SEM}\) définie des programmes \(\mathbb{P}\) vers les fonctions \(\D\rightarrow\D\). On écrit \(\mathcal{SEM}\colon\mathbb{P}\rightarrow\D\rightarrow\D\) et \(\mathcal{SEM}(\texttt{p})\) la sémantique du programme \texttt{p}.
+    \end{definition}
+
+    Puisque que la sémantique d'un programme est une fonction, \(\mathcal{SEM}(\texttt{p})\) est une fonction qui demande à être appliquée \`a des données. On écrira donc \(\mathcal{SEM}(\texttt{p})(v)\) pour designer le résultat de l'application de la sémantique d'un programme \texttt{p} a un programme \(v\).
+    \begin{Note}Différencier la sémantique du programme.\\
+        Il est tentant d'écrire \(\texttt{p}(v)\), mais \texttt{p} n'est qu'un texte, il ne peut rien tout seul.
+    \end{Note}
+    La sémantique d'un programme est donc un ensemble de paires \(\langle valeur, image\rangle\).\par
+    
+    Quand l'exécution d'un programme ne répond rien pour certaines valeurs d'entrée, boucle, s'arrête brutalement sur une condition d'erreur (ex. division par 0), la fonction \(\mathcal{SEM}\) n'est pas définie sur ces valeurs.\par
+    \begin{Note} Définir le non défini.\\
+        On ne peut pas augmenter le co-domaine d'une nouvelle valeur, \texttt{non-def}, qui servirait à représenter qu'une fonction n'est pas définie en un point \(v\), tel que \(\langle v,\texttt{non-def}\rangle\in \mathcal{SEM}(\texttt{p})\) plutôt que \(\lnot\exists w.\langle v,w\rangle\in \mathcal{SEM}(\texttt{p})\).\\
+        Cela reviendrait à définir le non défini, cela reviendrait à dire que toutes les anomalies sont prévues, or c'est impossible.
+    \end{Note}
+
+    D'autre part, la théorie de la calculabilité montre qu'il n'existe pas de modèle de calcul qui ne réalise que des fonctions totales, et les réalise toutes. On s'en tiendra donc à l'idée que des paires peuvent manquer dans la définition d'une fonction.\par
+    Il existe aussi des programmes mal formes, qui seront refusés par un compilateur par exemple, du point de vue de la sémantique un programme mal forme n'est pas un programme.\par
+
+    \subsection{Calculabilité et décidabilité}
+    \begin{definition}
+        Fonctions calculables.\\
+        Lorsqu'une fonction totale est la sémantique d'un programme, on dit qu'elle est \emph{calculable}. On dit sinon qu'elle est \emph{non calculable}.
+    \end{definition}
+        \begin{definition}
+        Problèmes décidables.\\
+        Lorsqu'un problème de décision est calculable, on dit qu'il est \emph{décidable}. On dit sinon qu'il est \emph{indécidable} ou non décidable.
+    \end{definition}
+    \begin{result}
+        La fonction qui teste l'arrêt d'un programme sur une donnée, tous deux passés en paramètres, n'est pas calculable. \autocite{turing1936}
+    \end{result}
+    \begin{definition}
+            Pour chaque valeur, \(v\in\D\) l'exécution d'un programme \texttt{p} peut s'arrêter, \(\exists w.\langle v,w\rangle\in\mathcal{SEM}(\texttt{p})\), ou boucler \(\lnot\exists w.\langle v,w\rangle\in\mathcal{SEM}(\texttt{p})\).\\
+            Le problème de l'arrêt consiste à réaliser une fonction \(\text{Arr\^et}\colon\mathbb{P}\times\D\rightarrow\mathbb{B}\) telle que \(\texttt{p},v\mapsto\exists w.\langle v,w\rangle\in\mathcal{SEM}(\texttt{p})\)
+    \end{definition}
+    \begin{result}
+        Les fonctions qui prennent des programmes en paramètre et dont le résultat dépend uniquement de leur sémantique ne sont jamais calculables. C'est le théorème de Rice.\autocite{rice1953}
+    \end{result}
+    \begin{Note} Sur le théorème de Rice.\\
+        Le théorème de Rice ne pose de limites que sur l'analyse statique du programme, c'est-à-dire sur tous les problèmes qui peuvent être déduits sans lancer le programme. Il ne rentre donc pas en conflit avec les fonctions de compilation, même si les compilateurs actuels sont de plus en plus puissants et performants, leur analyse du code reste statique.\\
+        Lectures conseillées :
+        \begin{itemize}
+            \item Sémantiques mécanisées, Xavier Leroy, Collège de France
+            \item Data flow analysis, Thomas Jensen, Université de Rennes
+        \end{itemize}
+    \end{Note}
+
+    \subsection{La thèse de Church}
+    \begin{definition}
+        Modèle de calcul\\
+        Un modèle de calcul est la définition formelle d'une règle de calcul qui compose des opérations élémentaires ne recourant chacune qu'à des moyens finis.
+    \end{definition}
+    \begin{result}
+        La notion de calculabilité ne dépend pas du modèle de calcul.
+    \end{result}
+    
   \section{Th\'eor\`emes de Cantor}\label{sec:theoremes_cantor}
   
   
