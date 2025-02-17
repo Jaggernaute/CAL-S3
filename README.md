@@ -15,7 +15,7 @@ Ce document regroupe des notes personnelles sur le cours de calculabilité ensei
 ## Avancement des sections
 | Section | Statut |
 |---------|--------|
-| Introduction à la calculabilité | 🟡 En cours |
+| Introduction à la calculabilité | 🟢 Complété |
 | Sémantique des langages de programmation | 🔴 À faire |
 | Complexité des algorithmes | 🔴 À faire |
 | Travaux dirigés et pratiques | 🔴 À faire |

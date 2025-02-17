@@ -123,6 +123,55 @@
     \begin{result}
         La notion de calculabilité ne dépend pas du modèle de calcul.
     \end{result}
+
+    De nombreuses propositions de langages de programmation et de sémantiques de programmes ont été faites. À chaque fois, les mêmes capacités de calcul ont été trouvées. Autrement dit, à chaque fois, les mêmes fonctions étaient non calculables. Cette observation se formalise dans une conjecture, appelée la \emph{Thèse de Church} \autocite{church_unsolvable_1936}, énoncée par Alonzo Church et ses collègues à partir de 1936.\\
+    On dit des modèles de calcul qui permettent de programmer tout ce qui est calculable qu'ils ont la puissance du calculable, ou qu'ils sont équivalents à une machine de \emph{Turing universelle}, du nom de l'un des premiers modèles de la calculabilité, ou encore qu'ils sont calculatoirement complets. La plupart des langages de programmation ont la puissance du calculable.
+
+    \subsection{Programmes WHILE}
+    Les programmes WHILE dont la principale caractéristique est d'offrir une boucle \texttt{while c do i od} qui commande d'exécuter l'instruction \texttt{i} tant que la condition \texttt{c} est vraie. La condition \texttt{c} peut cesser d'être vraie par l'effet de l'exécution de l'instruction \texttt{i}. Puisque l'exécution de ces programmes peut boucler, leur sémantique peut consister en une fonction partielle. En contrepartie, ils ont la puissance du calculable.
+
+    \subsection{Programmes FOR}
+    Le modèle des programmes FOR, en remplace la boucle \texttt{while c do i od} par une boucle \texttt{for n do i od} qui commande d'exécuter \texttt{n} fois l'instruction \texttt{i}. Ce nombre d'itérations \texttt{n} est calculé avant d'exécuter la boucle.
+    \begin{result}
+        Il n'est pas possible de réaliser toutes les fonctions calculables dans un modèle de calcul où l'exécution des programmes termine toujours.
+    \end{result}
+
+    \subsection{Fonction d'Ackermann}
+    Le moyen le plus direct de montrer qu'il existe des fonctions calculables non programmables dans le langage FOR est d'en exhiber un exemple concret tel que la fonction d'Ackermann :
+    \begin{equation}
+        A(m, n) = 
+      \begin{cases}
+         n+1 & \mbox{si } m = 0 \\
+         A(m-1, 1) & \mbox{si } m > 0 \mbox{ et } n = 0 \\
+         A(m-1, A(m, n-1)) & \mbox{si } m > 0 \mbox{ et } n > 0.
+      \end{cases}
+    \end{equation}
+
+    \subsection{Complexité des fonctions}
+    \begin{result}
+         Le coût minimal pour les réaliser par programme est une propriété intrinsèque des fonctions. Dans certains cas, ce coût est énorme et rend la fonction irréalisable en pratique. On utilise d'ailleurs le terme \emph{impraticable}.
+    \end{result}
+    Pour certaines fonctions, on pourra établir un coût de calcul \emph{minimum intrinsèque}. Pour d'autres, on ne connaît qu'un coût de calcul \emph{minimum empirique} : celui du programme le plus efficace à ce jour qui les réalise.
+
+    \subsection{\(\mathcal{P}\) vs. \(\mathcal{NP}\)}
+
+    \begin{definition}
+        Les fonctions \(\mathcal{P}\)\\
+        On appelle \(\mathcal{P}\) l'ensemble des fonctions dont le coût du calcul en fonction de la taille des entrées est majoré par une fonction polynomiale de la taille de l'entrée.
+    \end{definition}
+    \begin{definition}
+        Les fonctions \(\mathcal{NP}\)\\
+        On appelle \(\mathcal{NP}\) l'ensemble des fonctions dont le coût de la vériffication des réponses est majoré par une fonction polynomiale.
+    \end{definition}
+
+    \begin{result}
+        Les ensembles P et N P ont été déffinis vers 1970 ; ils s'intègrent dans une classification des fonctions qui est riche, mais des questions restent sans réponse à leur sujet.\\
+        On ne sait pas si \(\mathcal{P}\neq\mathcal{NP}\), cela constitue l'un des problèmes ouverts les plus importants de notre époque, en mathématiques et en informatique.
+    \end{result}
+
+    \subsection{La machine de Turing}
+    Cette machine de papier a été déffinie en 1936 par Alan Turing et a servi de modèle théorique à la création des calculateurs tels que nous les connaissons actuellement.\\
+    Les notions aussi fondamentales que celles de l'indécidabilité ou de l'interprétation d'un programme au moyen d'un autre programme ont été déffinies par Alan Turing lui-même, dès 1936. De ce modèle ont découlé les déffinitions d'autres modèles basés sur des automates.
     
   \section{Th\'eor\`emes de Cantor}\label{sec:theoremes_cantor}
   
